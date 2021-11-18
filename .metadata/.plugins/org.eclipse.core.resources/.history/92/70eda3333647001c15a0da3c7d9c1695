@@ -1,0 +1,30 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import view.TelaMenu;
+
+public class Controle implements ActionListener{
+	
+	private TelaMenu telaMenu;
+	
+	public Controle() {
+		telaMenu = new TelaMenu(this);
+		telaMenu.getListarProdutoBtn().addActionListener(this);
+		telaMenu.getSairBtn().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == telaMenu.getListarProdutoBtn()) {
+			
+		}
+	}
+
+}

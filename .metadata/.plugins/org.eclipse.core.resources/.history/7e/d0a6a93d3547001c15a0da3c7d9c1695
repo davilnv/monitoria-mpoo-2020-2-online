@@ -1,0 +1,22 @@
+package view;
+
+import javax.swing.JButton;
+
+public class TelaMenu extends TelaPadrao{
+	
+	JButton listarProdutoBtn, sairBtn;
+
+	public TelaMenu() {
+		super("Menu", 300, 200);
+		
+		listarProdutoBtn = new JButton("Listar Produto");
+		listarProdutoBtn.setSize(100, 30);
+		sairBtn = new JButton("Sair");
+		
+		add(listarProdutoBtn);
+		add(sairBtn);
+		
+		setVisible(true);
+	}
+	
+}

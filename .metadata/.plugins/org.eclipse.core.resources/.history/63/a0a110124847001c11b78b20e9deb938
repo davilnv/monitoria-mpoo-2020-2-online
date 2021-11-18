@@ -1,0 +1,58 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import model.BaseDados;
+import model.Produto;
+import view.TelaMenu;
+import view.TelaProduto;
+
+public class Controle implements ActionListener{
+	
+	private TelaMenu telaMenu;
+	private TelaProduto telaProduto;
+	
+	public Controle() {
+		telaMenu = new TelaMenu(this);
+		telaProduto  = new TelaProduto(this);
+		telaMenu.getListarProdutoBtn().addActionListener(this);
+		telaProduto.getBuscarBtn().addActionListener(this);
+		telaProduto.getAddCarrinhoBtn().addActionListener(this);
+		
+		telaMenu.getSairBtn().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == telaMenu.getListarProdutoBtn()) {
+			telaProduto.setVisible(true);
+			telaMenu.setVisible(false);
+		} 
+		ArrayList<Produto> produtos = null;
+		if (e.getSource() == telaProduto.getBuscarBtn()) {
+			String pesquisa = telaProduto.getBuscaField().getText();
+			
+			if(pesquisa.equals("")) {
+				produtos = BaseDados.listarCadastrados();
+			} else {
+				produtos = BaseDados.buscarProduto(pesquisa);
+			}
+			telaProduto.criarTabela(produtos);
+			
+		}
+		if(e.getSource() == telaProduto.getAddCarrinhoBtn()) {
+			System.out.println("testeee");
+			ArrayList<Produto> products = new ArrayList<>();
+			products.add(produtos.get(telaProduto.getTabela().getSelectedRow()));
+			telaProduto.criarTabelaCarrinho(products);
+		}
+	}
+
+}

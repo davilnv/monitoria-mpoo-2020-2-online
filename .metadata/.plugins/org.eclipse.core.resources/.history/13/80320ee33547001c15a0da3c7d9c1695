@@ -1,0 +1,22 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import view.TelaMenu;
+
+public class Controle implements ActionListener{
+	
+	private TelaMenu telaMenu;
+	
+	public Controle() {
+		telaMenu = new TelaMenu(this);
+		telaMenu.getListarProdutoBtn().addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	}
+
+}

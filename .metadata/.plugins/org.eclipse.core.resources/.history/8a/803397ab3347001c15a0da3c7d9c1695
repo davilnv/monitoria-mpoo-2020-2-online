@@ -1,0 +1,10 @@
+package view;
+
+import javax.swing.JFrame;
+
+public class TelaPadrao extends JFrame{
+	
+	public TelaPadrao(String titulo) {
+		super(titulo);
+	}
+}

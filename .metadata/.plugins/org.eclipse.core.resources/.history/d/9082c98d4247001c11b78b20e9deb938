@@ -1,0 +1,30 @@
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+
+public class CarretListener {
+  public static void main(String args[]) {
+    JFrame frame = new JFrame("Caret Example");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    JTextArea textArea = new JTextArea();
+    JScrollPane scrollPane = new JScrollPane(textArea);
+    frame.add(scrollPane, BorderLayout.CENTER);
+    
+    CaretListener listener = new CaretListener() {
+      public void caretUpdate(CaretEvent caretEvent) {
+        System.out.println("Dot: "+ caretEvent.getDot());
+        System.out.println("Mark: "+caretEvent.getMark());
+      }
+    };
+
+    textArea.addCaretListener(listener);
+
+    frame.setSize(250, 150);
+    frame.setVisible(true);
+  }
+}

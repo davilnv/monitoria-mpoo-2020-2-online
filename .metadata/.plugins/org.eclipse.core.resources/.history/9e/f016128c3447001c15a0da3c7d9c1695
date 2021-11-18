@@ -1,0 +1,10 @@
+package view;
+
+public class TelaMenu extends TelaPadrao{
+
+	public TelaMenu(String titulo, int largura, int altura) {
+		super(titulo, largura, altura);
+		setVisible(true);
+	}
+	
+}
