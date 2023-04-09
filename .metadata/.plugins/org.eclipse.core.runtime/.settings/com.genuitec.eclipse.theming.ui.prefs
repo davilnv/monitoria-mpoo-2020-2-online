@@ -1,9 +1,11 @@
 applyBackground=false
-approved.defs.file.last.changed.time=1624986146000
-configurationInstallLocation=/C\:/Users/davi_/eclipse/java-2021-03/eclipse/
+approved.defs.file.last.changed.time=1649720987000
+configurationInstallLocation=/C\:/Users/davi_/eclipse/java-2022-06/eclipse/
+ct.upsell.display.after=1681478023791
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1649887482739
-lastConfiguration=1649963862363
-newinstall=true
+last.download.attempt.time=1681046026130
+lastConfiguration=1681046011386
+newinstall=false
+showWelcomeDialog=false
 workbench.theme=Dark Gray
